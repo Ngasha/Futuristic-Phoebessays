@@ -1,4 +1,14 @@
 // Main JavaScript for Phoebessays Website
+tailwind.config = {
+    theme: {
+        extend: {
+            animation: {
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+        }
+    }
+}
+
 
 // Elegant Brand Cursor
 const cursor = document.getElementById('cursor');
@@ -195,4 +205,33 @@ document.head.appendChild(style);
 
 document.querySelectorAll('.bubble-success, .bubble-mini').forEach(bubble => {
     bubble.style.left = Math.random() * 90 + "%"; // random x position
+});
+
+// Hamburger menu functionality
+const hamburgerMenu = document.getElementById('hamburger-menu');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('open');
+    mobileMenu.classList.toggle('active');
+});
+
+// Close mobile menu when a link is clicked
+const mobileLinks = document.querySelectorAll('#mobile-menu a');
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburgerMenu.classList.remove('open');
+        mobileMenu.classList.remove('active');
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (event) => {
+    const isClickInsideNav = event.target.closest('nav');
+    const isHamburger = event.target.closest('#hamburger-menu');
+
+    if (!isClickInsideNav && mobileMenu.classList.contains('active')) {
+        hamburgerMenu.classList.remove('open');
+        mobileMenu.classList.remove('active');
+    }
 });
