@@ -15,13 +15,13 @@ function addGlitchEffect() {
     });
 }
 
-// Neural Network Lines Animation
-function createNeuralLines() {
+// PHOEBESSAYS Network Lines Animation
+function createPHOEBESSAYSLines() {
     const sections = document.querySelectorAll('section');
 
     sections.forEach(section => {
         const line = document.createElement('div');
-        line.className = 'neural-line';
+        line.className = 'PHOEBESSAYS-line';
         line.style.width = '100%';
         line.style.top = '50%';
         line.style.left = '0';
@@ -156,7 +156,7 @@ function enhanceParticleSystem() {
 // Initialize all animations
 document.addEventListener('DOMContentLoaded', function() {
     addGlitchEffect();
-    createNeuralLines();
+    createPHOEBESSAYSLines();
     enhanceLiquidMorph();
     createTypingAnimation();
     addGridPulse();
@@ -182,4 +182,3 @@ function optimizeAnimations() {
 // Call optimization on resize
 window.addEventListener('resize', optimizeAnimations);
 window.addEventListener('load', optimizeAnimations);
-

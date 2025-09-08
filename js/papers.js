@@ -2,7 +2,7 @@
 
 // Paper Database
 const paperDatabase = [
-    { id: 1, title: "Neural Networks in Cognitive Psychology", category: "psychology", grade: "A+", university: "Stanford", pages: 15, icon: "🧠", preview: "📄" },
+    { id: 1, title: "PHOEBESSAYS Networks in Cognitive Psychology", category: "psychology", grade: "A+", university: "Stanford", pages: 15, icon: "🧠", preview: "📄" },
     { id: 2, title: "Strategic Business Intelligence Analysis", category: "business", grade: "A", university: "Harvard", pages: 8, icon: "📊", preview: "📊" },
     { id: 3, title: "Advanced Machine Learning Algorithms", category: "technology", grade: "A+", university: "MIT", pages: 120, icon: "💻", preview: "💻" },
     { id: 4, title: "Shakespearean Literature Analysis", category: "literature", grade: "A", university: "Oxford", pages: 12, icon: "📚", preview: "📚" },
@@ -59,7 +59,7 @@ function loadPapers(filter = 'all') {
                             </div>
                         </div>
                         
-                        <div class="w-12 h-12 glass-neural rounded-xl flex items-center justify-center">
+                        <div class="w-12 h-12 glass-PHOEBESSAYS rounded-xl flex items-center justify-center">
                             <span class="text-2xl">${paper.icon}</span>
                         </div>
                     </div>
@@ -131,4 +131,3 @@ function closePaperGallery() {
 document.addEventListener('DOMContentLoaded', function() {
     initPaperFilters();
 });
-
