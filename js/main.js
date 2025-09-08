@@ -193,3 +193,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+document.querySelectorAll('.bubble-success, .bubble-mini').forEach(bubble => {
+    bubble.style.left = Math.random() * 90 + "%"; // random x position
+});
