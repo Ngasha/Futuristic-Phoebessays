@@ -140,16 +140,24 @@ document.querySelectorAll('.reveal').forEach(el => {
     observer.observe(el);
 });
 
-// Parallax effect
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.float-element');
+// Parallax effect (throttled with rAF + passive listener)
+let ticking = false;
 
-    parallaxElements.forEach((element, index) => {
-        const speed = (index + 1) * 0.1;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
+function onScroll() {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.float-element');
+            parallaxElements.forEach((element, index) => {
+                const speed = (index + 1) * 0.1;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+            ticking = false;
+        });
+        ticking = true;
+    }
+}
+window.addEventListener('scroll', onScroll, { passive: true });
 
 // Initialize effects
 createParticles();

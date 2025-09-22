@@ -41,6 +41,19 @@ body {
 }
 
 
+/* Reduce motion for users who prefer it */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
 /* Elegant Brand Cursor */
 
 .cursor {
@@ -397,6 +410,14 @@ body {
     /* hides bubbles when outside */
 }
 
+
+/* Avoid layout cost until revealed */
+
+.reveal {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
+}
+
 .bubble-success,
 .bubble-mini {
     position: absolute;
@@ -481,7 +502,7 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        padding: 2rem;
+        padding: 1rem;
     }
     .bubble-icon {
         font-size: 2rem !important;
